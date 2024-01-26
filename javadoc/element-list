@@ -4,4 +4,5 @@ fr.cotedazur.univ.polytech.logger
 fr.cotedazur.univ.polytech.model.bot
 fr.cotedazur.univ.polytech.model.card
 fr.cotedazur.univ.polytech.model.deck
+fr.cotedazur.univ.polytech.model.golds
 fr.cotedazur.univ.polytech.view
