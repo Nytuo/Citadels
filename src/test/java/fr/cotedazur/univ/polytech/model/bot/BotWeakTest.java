@@ -73,28 +73,6 @@ class BotWeakTest {
         assertEquals(2, botWeak.getHands().size());
         botWeak.getHands().clear();
 
-        /*//Put 3 district with architect
-        botWeak.getHands().add(DistrictCard.PALACE);
-        botWeak.getHands().add(DistrictCard.PRISON);
-        botWeak.getHands().add(DistrictCard.MANOR);
-        botWeak.setGolds(24);
-        botWeak.addCardToBoard(botWeak.choiceHowToPlayDuringTheRound());
-        botWeak.getPlayerRole().useEffect(botWeak,(Player) null);
-        assertEquals(3, botWeak.getBoard().size());
-        botWeak.getHands().clear();
-        botWeak.getBoard().clear();*/
-
-        /*//Trying to put 3 district with architect but gold are reduced
-        botWeak.getHands().add(DistrictCard.PALACE);
-        botWeak.getHands().add(DistrictCard.PRISON);
-        botWeak.getHands().add(DistrictCard.MANOR);
-        botWeak.setGolds(9);
-        botWeak.addCardToBoard(botWeak.choiceHowToPlayDuringTheRound());
-        botWeak.getPlayerRole().useEffect(botWeak,(Player) null);
-        assertEquals(2, botWeak.getBoard().size());
-        botWeak.getHands().clear();
-        botWeak.getBoard().clear();*/
-
         //Use merchant effect
         botWeak.setPlayerRole(CharacterCard.MERCHANT);
         botWeak.getHands().add(DistrictCard.PALACE);

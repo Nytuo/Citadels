@@ -3,7 +3,7 @@ package fr.cotedazur.univ.polytech.model.bot;
 import fr.cotedazur.univ.polytech.model.card.CharacterCard;
 import fr.cotedazur.univ.polytech.model.card.Color;
 import fr.cotedazur.univ.polytech.model.card.DistrictCard;
-import fr.cotedazur.univ.polytech.model.card.DistrictCardComparator;
+
 
 import java.util.*;
 
@@ -17,22 +17,20 @@ public class BotStrong extends CommonMethod implements GameActions {
         Set<Color> colorsOnBoard = colorInList(getBoard());
         if (!validCards.isEmpty()) {
             List<DistrictCard> purpleCard = new ArrayList<>();
-            List<DistrictCard> colorNotOnBoard = new ArrayList<>();
-            List<DistrictCard> cardsThatMatchWithRoleColor = new ArrayList<>();
+
             for (DistrictCard districtCard : validCards) {
                 if (districtCard.getDistrictColor() == Color.PURPLE) {
                     purpleCard.add(districtCard);
-                }
-                if (!colorsOnBoard.contains(districtCard.getDistrictColor())) {
-                    colorNotOnBoard.add(districtCard);
-                }
-                if (districtCard.getDistrictColor() == getPlayerRole().getCharacterColor()) {
-                    cardsThatMatchWithRoleColor.add(districtCard);
                 }
             }
             if (!purpleCard.isEmpty()) return maxPrice(purpleCard);
         }
 
+            return cp(colorsOnBoard);
+        }
+
+
+        public DistrictCard cp(Set<Color> colorsOnBoard){
             if (validCards.isEmpty()) return null;
 
             List<DistrictCard> purpleCard = new ArrayList<>();
@@ -57,9 +55,8 @@ public class BotStrong extends CommonMethod implements GameActions {
                 prioritizedCards = purpleCard;
             }
             return maxPrice(prioritizedCards.isEmpty() ? validCards : prioritizedCards);
+
         }
-
-
     @Override
     public CharacterCard selectWhoWillBeAffectedByThiefEffect(List<Player> players, List<CharacterCard> characterCards) {
         if (getPlayerRole() == CharacterCard.THIEF) {

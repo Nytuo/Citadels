@@ -47,38 +47,6 @@ class CharacterCardTest {
         assertEquals(3, player.getGolds());
     }
 
-    /*@Test
-    void testEffectForArchitect() {
-        districtDeck = DeckFactory.createEmptyDistrictDeck();
-        districtDeck.add(DistrictCard.MANOR);
-        districtDeck.add(DistrictCard.HAUNTED_CITY);
-        botRandom1.setPlayerRole(CharacterCard.ARCHITECT);
-        botRandom1.setGolds(50);
-
-        when(random.nextInt(anyInt())).thenReturn(0);
-
-        botRandom1.getPlayerRole().useEffect(player, new StackOfCoins())(botRandom1, districtDeck);
-        botRandom1.getPlayerRole().useEffect(player, new StackOfCoins())(botRandom1, (Player) null);
-
-        assertEquals(0, botRandom1.getHands().size());
-        assertEquals(45, botRandom1.getGolds());
-
-        botRandom1.setGolds(50);
-        botRandom1.getHands().clear();
-        botRandom1.getBoard().clear();
-        districtDeck = DeckFactory.createEmptyDistrictDeck();
-        districtDeck.add(DistrictCard.MANOR);
-        districtDeck.add(DistrictCard.HAUNTED_CITY);
-        botRandom1.setPlayerRole(CharacterCard.ARCHITECT);
-        when(random.nextInt(anyInt())).thenReturn(1);
-
-        botRandom1.getPlayerRole().useEffect(player, new StackOfCoins())(botRandom1, districtDeck);
-        botRandom1.getPlayerRole().useEffect(player, new StackOfCoins())(botRandom1, (Player) null);
-
-        assertEquals(2, botRandom1.getHands().size());
-        assertEquals(50, botRandom1.getGolds());
-    }*/
-
     @Test
     void testUseEffectForMerchant() {
         player.setGolds(50);
